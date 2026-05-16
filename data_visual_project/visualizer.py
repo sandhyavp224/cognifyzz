@@ -1,0 +1,43 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("sales_dataset.csv")
+
+
+plt.figure()
+plt.plot(df["Month"], df["Sales"])
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("line_chart.png")
+plt.close()
+print("Line chart saved successfully as line_chart.png")
+
+plt.figure()
+plt.bar(df["Month"], df["Sales"])
+plt.title("Monthly Sales Comparison")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("bar_chart.png")
+print("Bar chart saved successfully as bar_chart.png")
+plt.show()
+
+plt.close()
+print("All charts generated successfully!")
+print("Files created:")
+print("1. line_chart.png")
+print("2. bar_chart.png")
+# print("First 5 rows")
+# print(df.head())
+# print("\nShape of the dataset:")
+# print(df.shape)
+# print("\ncolumns Names: ")
+# print(df.columns)
+# print("\nData Types: ")
+# print(df.dtypes)
+# print("\nSummary Statistics: ")
+# print(df.describe())
